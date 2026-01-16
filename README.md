@@ -1,5 +1,6 @@
 # RainyInc Ultimate Vanity Sniper v2.0
 High-Performance WebSocket-Based Discord Vanity URL Sniper.
+# (ücretsiz) PROJE ORTAKLIGI İCİN DİSCORD: incrainy 
 
 ---
 
