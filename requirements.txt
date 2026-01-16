@@ -1,0 +1,15 @@
+# RainyInc Vanity Sniper - System Requirements
+# Last Updated: 2026-01-16
+
+# Runtime Environment
+Node.js: v16.x or higher
+
+# Dependencies
+discord.js-selfbot-v13: ^3.1.2
+axios: ^1.6.0
+colors: ^1.4.0
+readline-sync: ^1.4.10
+
+# Network
+Internet: Stable high-speed connection (Fiber recommended)
+Access: Discord API access (No Proxy/VPN recommended for lowest latency)
