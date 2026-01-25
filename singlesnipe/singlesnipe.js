@@ -23,7 +23,7 @@ async function run() {
                 
                 if (!invite) {
                     clearInterval(monitor);
-                    process.stdout.write('\n'); // Satırı temizle
+                    process.stdout.write('\n'); 
                     console.log(`${"[ALERT]".yellow} Vanity boşa düştü! Alım deneniyor...`);
                     
                     const guild = client.guilds.cache.get(guildId);
@@ -48,7 +48,7 @@ async function run() {
                     const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
                     const seconds = (elapsed % 60).toString().padStart(2, '0');
                     
-                    // Konsolu kirletmeden aynı satırı günceller
+                    
                     process.stdout.write(`\r${"[STATUS]".cyan} Süre: ${minutes}:${seconds} | Kontrol: ${checkCount} | Hedef: ${vanity} `.white);
                 }
             } catch (e) {}
@@ -60,5 +60,6 @@ async function run() {
         process.exit();
     });
 }
+
 
 module.exports = { run };
