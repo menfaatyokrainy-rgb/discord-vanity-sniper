@@ -18,26 +18,26 @@ async function run() {
 
     console.log(`\n${"[SYSTEM]".cyan} Tokenlar sisteme baglanıyor, lütfen bekleyin...`);
 
-    // Tokenları sisteme dahil etme
+    
     for (const token of tokens) {
         const client = new Client({ checkUpdate: false });
         client.on('ready', () => {
-            // İlk bağlantıda bilgi verir, sonra satır güncellenir
+            
         });
         client.login(token).catch(() => {});
         clients.push(client);
     }
 
-    // Tüm botların hazır olmasını bekle ya da ilk hazır olanla başla
+    
     const interval = setInterval(async () => {
         if (isFinished) return clearInterval(interval);
 
-        // En az bir bot hazır olana kadar bekle
+        
         const activeClients = clients.filter(c => c.isReady());
         if (activeClients.length === 0) return;
 
         try {
-            // İzleme işlemini ilk hazır bot üzerinden yapıyoruz
+            
             const invite = await activeClients[0].fetchInvite(vanity).catch(() => null);
             
             if (!invite) {
@@ -56,7 +56,7 @@ async function run() {
                                     process.exit();
                                 })
                                 .catch(() => {
-                                    // Hata durumunda sessizce devam et (multi-claim)
+                                    
                                 });
                         }
                     }
@@ -67,11 +67,12 @@ async function run() {
                 const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
                 const seconds = (elapsed % 60).toString().padStart(2, '0');
                 
-                // Konsolun en alt satırını günceller
+                
                 process.stdout.write(`\r${"[STATUS]".magenta} Sure: ${minutes}:${seconds} | Kontrol: ${checkCount} | Aktif Bot: ${activeClients.length}/${tokens.length} | Hedef: ${vanity} `.white);
             }
         } catch (e) {}
     }, 350);
 }
+
 
 module.exports = { run };
